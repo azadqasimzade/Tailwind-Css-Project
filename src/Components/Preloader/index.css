@@ -1,0 +1,11 @@
+#preloader {
+    background-color: #fff !important;
+    background: url(../../img/loader.gif);
+    background-size: 10%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 999999;
+}
