@@ -27,28 +27,46 @@ const Campaigns = () => {
     slidesToScroll: 1,
     arrows:true,
     autoplay: true,
-    speed: 1000,
+    speed: 500,
     autoplaySpeed: 3500,
     nextArrow: <NextBtn />,
-    prevArrow: <PrevBtn />
+    prevArrow: <PrevBtn />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          arrows:false
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows:false
+        }
+      }
+    ]
   };
 
   return (
     <>
-      <div className='container mx-auto px-32 mb-10'>
-        <Title>
-          Kampanyalar
-        </Title>
+      <div className='md:container mx-auto lg:px-32 md:mb-10'>
+        <div className='hidden md:block'>
+          <Title>
+            Kampanyalar
+          </Title>
+        </div>
           <div className='w-full flex justify-center'>
             {
               !banners.length && <img src={loader} alt="Loading..." className='w-20 h-20'/>
             }
           </div>
-            <Slider {...settings} className='-mx-2'>
+            <Slider {...settings} className='lg:-mx-2'>
                 {
                   banners.length && banners.map(banner =>(
-                    <div key={banner.id} className='px-2'>
-                      <img className='w-full object-cover rounded-lg' src={banner.image} alt={banner.id} />
+                    <div key={banner.id} className='md:px-2'>
+                      <img className='w-full object-cover md:rounded-lg' src={banner.image} alt={banner.id} />
                     </div>
                   ))
                 }

@@ -10,7 +10,7 @@ const Products = ({product}) => {
             </button>
             <img src={product.image} alt={product.title} /> 
             <div className='text-brandColor '>{product.price}</div>
-            <div className='text-gray-900'>{product.title}</div>
+            <div className='text-xs sm:text-base text-gray-900'>{product.title}</div>
             <div className='text-gray-500'>{product.alt}</div>
         </div>
     </>

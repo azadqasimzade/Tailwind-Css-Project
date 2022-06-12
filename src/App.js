@@ -7,14 +7,18 @@ import Favorites from "./Components/Favorites/Favorites"
 import MobileApp from "./Components/MobileApp/MobileApp"
 import Cards from "./Components/Cards/Cards"
 import Footer from "./Components/Footer/Footer"
+import {useWindowWidth} from '@react-hook/window-size'
 
 export default function App() {
+  const windowWidth = useWindowWidth()
+
   return (
     <>
         <Header/>
+        {windowWidth <= 768 && <Campaigns/>}
         <HeroSection/>
         <Categories/>
-        <Campaigns/>
+        {windowWidth > 768 && <Campaigns/>}
         <Favorites/>
         <MobileApp/>
         <Cards/>
